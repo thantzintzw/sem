@@ -1,32 +1,5 @@
-<h1>Heading</h1>
+# Software Engineering Methods
 
-<h2>Sub-heading</h2>
-
-<p>Paragraphs are separated
-by a blank line.</p>
-
-<p>Two spaces at the end of a line<br />
-produces a line break.</p>
-
-<p>Text attributes <em>italic</em>, 
-<strong>bold</strong>, <code>monospace</code>.</p>
-
-<p>Horizontal rule:</p>
-
-<hr />
-
-<p>Bullet list:</p>
-
-<ul>
-<li>apples</li>
-<li>oranges</li>
-<li>pears</li>
-</ul>
-
-<p>Numbered list:</p>
-
-<ol>
-<li>lather</li>
-<li>rinse</li>
-<li>repeat</li>
-</ol>
+- Build Status [![Build Status](https://travis-ci.org/thantzintzw/sem.svg?branch=master)](https://travis-ci.org/thantzintzw/sem)
+- License [![LICENSE](https://img.shields.io/github/license/thantzintzw/sem.svg?style=flat-square)](https://github.com/thantzintzw/sem/blob/master/LICENSE)
+- Release [![Releases](https://img.shields.io/github/release/thantzintzw/sem/all.svg?style=flat-square)](https://github.com/thantzintzw/sem/releases)
