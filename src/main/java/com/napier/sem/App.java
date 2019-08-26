@@ -113,31 +113,42 @@ public class App {
     }
 
     public Employee getEmployee(int ID) {
+        Employee emp=new Employee();
         try {
-            // Create an SQL statement
-            Statement stmt = con.createStatement();
-            // Create string for SQL statement
             String strSelect =
-                    "SELECT emp_no, first_name, last_name "
-                            + "FROM employees "
-                            + "WHERE emp_no = " + ID;
+                    "SELECT emp_no, first_name, last_name from employees where emp_no=?";
+
+            // Create an SQL statement
+            PreparedStatement stmt = con.prepareStatement(strSelect);
+            System.out.println(" after premare");
+            // Create string for SQL statement
+           stmt.setInt(1,ID);
+            System.out.println(" after binding");
+
             // Execute SQL statement
-            ResultSet rset = stmt.executeQuery(strSelect);
+            ResultSet rset = stmt.executeQuery();
+            if (rset==null) {
+                System.out.println("In  rset Null No employee &&&&&&&&&&Found");
+
+            }
             // Return new employee if valid.
             // Check one is returned
-            if (rset.next()) {
-                Employee emp = new Employee();
+            else{
+            while (rset.next()) {
+
                 emp.emp_no = rset.getInt("emp_no");
                 emp.first_name = rset.getString("first_name");
                 emp.last_name = rset.getString("last_name");
-                return emp;
-            } else
-                return null;
+
+            }
+               }
+            return emp;
         } catch (Exception e) {
             System.out.println(e.getMessage());
             System.out.println("Failed to get employee details");
             return null;
         }
+
     }
 
 
@@ -167,6 +178,10 @@ public class App {
         Department d1= a.getDepartment( "Sales");
         System.out.println(d1);
 
+        //for integration test
+        Employee e1 = a.getEmployee(255530);
+        System.out.println(e1);
+
         // Disconnect from database
         a.disconnect();
     }
@@ -193,7 +208,7 @@ public class App {
             System.exit(-1);
         }
 
-        int retries = 10;
+        int retries = 30;
         for (int i = 0; i < retries; ++i)
         {
             System.out.println("Connecting to database...");

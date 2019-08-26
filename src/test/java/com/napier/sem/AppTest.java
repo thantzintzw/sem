@@ -19,16 +19,11 @@ public class AppTest
     }
 
     @Test
-    void printSalaries()
+    void testGetEmployee()
     {
-        ArrayList<Employee> employees = new ArrayList<Employee>();
-        Employee emp = new Employee();
-        emp.emp_no = 1;
-        emp.first_name = "Kevin";
-        emp.last_name = "Chalmers";
-        emp.title = "Engineer";
-        emp.salary = 55000;
-        employees.add(emp);
-        app.printSalaries(employees);
+        Employee emp = app.getEmployee(255530);
+        assertEquals(emp.emp_no, 255530);
+        assertEquals(emp.first_name, "Ronghao");
+        assertEquals(emp.last_name, "Garigliano");
     }
 }
