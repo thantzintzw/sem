@@ -22,8 +22,6 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
-
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
@@ -46,7 +44,6 @@
                     <appendAssemblyId>false</appendAssemblyId>
                 </configuration>
             </plugin>
-
 
             <plugin>
                 <groupId>org.jacoco</groupId>

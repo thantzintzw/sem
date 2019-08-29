@@ -120,10 +120,10 @@ public class App {
 
             // Create an SQL statement
             PreparedStatement stmt = con.prepareStatement(strSelect);
-            System.out.println(" after premare");
+            //System.out.println(" after premare");
             // Create string for SQL statement
            stmt.setInt(1,ID);
-            System.out.println(" after binding");
+            //System.out.println(" after binding");
 
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery();
@@ -139,6 +139,8 @@ public class App {
                 emp.emp_no = rset.getInt("emp_no");
                 emp.first_name = rset.getString("first_name");
                 emp.last_name = rset.getString("last_name");
+                System.out.println(emp.first_name+emp.last_name+emp.salary);
+
 
             }
                }
@@ -159,7 +161,7 @@ public class App {
         // Connect to database
         if (args.length < 1)
         {
-            a.connect("localhost:3306");
+            a.connect("localhost:33060");
         }
         else
         {
